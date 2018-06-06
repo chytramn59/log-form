@@ -1,0 +1,75 @@
+<!-- <div class="container">
+<div class="row">
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+            <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+            	<form>
+            		<div class="form-group ">
+                  <label>email</label>
+                <input type="email" name="email" class="form-control"  placeholder="Email" 
+              {{email}}>
+              </div>
+            	</form>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+      </div>
+  </div>
+
+
+  <div class="row">
+      <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+      <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>email</th>
+      
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>{{email}}</td>
+      
+      </tr>
+        </tbody>
+        </table>
+      </div>
+    </div> -->
+    <div class="container">
+ <div class="row">
+             <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <form #detailForm="ngForm" (ngSubmit)="onSubmit(detailForm)"> 
+              <div class="form-group">
+                <input type="email" class="form-control"  placeholder="Email" pattern="[a-z]+[A-Z]+[0-9]+" required 
+                name="email" 
+                [(ngModel)]="email" #emailRef="ngModel" required
+         [ngClass]="(emailRef.invalid && emailRef.touched) ? 'red' : ''">
+         <p *ngIf="(emailRef.invalid && emailRef.touched)">Email is Required</p>
+              </div>
+
+<div class="form-group">
+                <input type="password" class="form-control"  placeholder="password" pattern="[a-z]+[A-Z]+[0-9]+" required 
+                name="password" 
+                [(ngModel)]="password" #passwordRef="ngModel" required
+         [ngClass]="(passwordRef.invalid && passwordRef.touched) ? 'red' : ''">
+         <p *ngIf="(passwordRef.invalid && passwordRef.touched)">password is Required</p>
+              </div>
+
+</form>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+          </div>
+
+
+ 
+              <!-- <div class="form-group">
+                <input type="password" class="form-control"  placeholder="password" pattern="[a-z]+[A-Z]+[0-9]+" required 
+                name="email" 
+                [(ngModel)]="password" #passwordRef="ngModel" required
+         [ngClass]="(passwordRef.invalid && passwordRef.touched) ? 'red' : ''">
+         <p *ngIf="(passowrdRef.invalid && passwordRef.touched)">password is Required</p>
+              </div> -->
+            
+          </div>
+
+
+    <button (click)="router.navigate(['/signup'])">back</button>

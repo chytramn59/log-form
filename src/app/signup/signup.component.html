@@ -1,0 +1,265 @@
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"> <img class="img-responsive" src="./assets/Page 1.png"></a>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-custom" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="bg-color"><a href="#"><img  class="img-responsive" src="./assets/social_linkedin.png">
+        </a></li>
+        <li class="bg-color"><a href="#"><img class="img-responsive" src="./assets/social_twitter.png">
+        </a></li>
+        <li class="color-custom"><a href="#">LOG IN</a></li>
+        <li class="color-custom"><a href="#">SIGN UP</a></li>
+      </ul> 
+    </div>
+  </nav><br>
+  <br>
+  <br>
+   <div class="container">
+    <div class="row">
+      <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"></div>
+      <div class="col-sm-8 col-md-8 col-xs-8 col-lg-8 row-custom">
+       <form #detailForm="ngForm" (ngSubmit)="onSubmit(detailForm)">  
+         <div class="row row-border">
+           <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4">
+             <p class="sign-up-header">Sign up with Email</p>
+           </div>
+           <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4">
+             <p class="or">Or</p>
+           </div>
+           <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4">
+            <button class="button button1"><span class="fa fa-linkedin" aria-hidden="true"></span>Connect with Linkedin</button>
+          </div>
+        </div>
+          
+           <div class="row">
+             <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <div class="form-group">
+                <input type="text" class="form-control margin-pop"  placeholder="First Name" name="firstname" [ngStyle]="{'background' : 'url(./assets/Menu_Green.png)'}"
+                [(ngModel)]="name" #nameRef="ngModel" required
+         [ngClass]="(nameRef.invalid && nameRef.touched) ? 'red' : ''">
+         <p *ngIf="(nameRef.invalid && nameRef.touched)">Name is Required</p>
+              </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+          </div>
+        <div class="row">
+             <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <div class="form-group">
+                <input type="text" class="form-control margin-pop"  placeholder="Last Name" name="lastname" [ngStyle]="{'background' : 'url(./assets/Menu_Green.png)'}"
+                [(ngModel)]="lastname" #lastnameRef="ngModel" required
+         [ngClass]="(lastnameRef.invalid && lastnameRef.touched) ? 'red' : ''">
+         <p *ngIf="(lastnameRef.invalid && lastnameRef.touched)">LastName is Too short</p>
+              </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+          </div>
+
+          <div class="row">
+             <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <div class="form-group">
+                <input type="text" class="form-control margin-pop"  placeholder="Title" name="title" [ngStyle]="{'background' : 'url(./assets/Company_Green.png)'}"
+                [(ngModel)]="title" #titleRef="ngModel" required
+         [ngClass]="(titleRef.invalid && titleRef.touched) ? 'red' : ''">
+         <p *ngIf="(titleRef.invalid && titleRef.touched)">Title is required</p>
+              </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+          </div>
+
+           <div class="row">
+             <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <div class="form-group">
+                <input type="text" class="form-control margin-pop"  placeholder="Company" name="company" [ngStyle]="{'background' : 'url(./assets/Company_Green.png)'}"
+                [(ngModel)]="company" #companyRef="ngModel" required
+         [ngClass]="(companyRef.invalid && companyRef.touched) ? 'red' : ''">
+         <p *ngIf="(companyRef.invalid && companyRef.touched)">Company Name is required</p>
+              </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+          </div>
+
+          <div class="row">
+             <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <div class="form-group">
+                <input type="text" class="form-control margin-pop"  placeholder="Phone"  maxlength="10" pattern="[0-9]+" required 
+                name="phone" [ngStyle]="{'background' : 'url(./assets/Industry_white.png)'}"
+                [(ngModel)]="phone" #phoneRef="ngModel" required
+         [ngClass]="(phoneRef.invalid && phoneRef.touched) ? 'red' : ''">
+         <p *ngIf="(phoneRef.invalid && phoneRef.touched)">phonenumber is Required</p>
+              </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+          </div>
+
+           <div class="row">
+             <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <div class="row">
+                <div class="col-sm-10 col-md-10 c0l-xs-6 col-lg-10">
+              <div class="form-group">
+                <input type="text" class="form-control city-pop"  placeholder="City" name="city" [ngStyle]="{'background' : 'url(./assets/people_green_small.png)'}"
+                [(ngModel)]="city" #cityRef="ngModel" required
+         [ngClass]="(cityRef.invalid && cityRef.touched) ? 'red' : ''">
+         <p *ngIf="(cityRef.invalid && cityRef.touched)">City is Required</p>
+              </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-4 col-lg-2">
+               <div class="form-group">
+                <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle button-right" type="button" data-toggle="dropdown">AK
+       <span class="caret"></span></button>
+       <ul class="dropdown-menu">
+        <li><a href="#">AA</a></li>
+        <li><a href="#">CS</a></li>
+        <li><a href="#">SC</a></li>
+      </ul>
+    </div>
+              </div>
+
+
+            </div>
+            </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+          </div>
+          <div class="row">
+             <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <div class="form-group">
+                <input type="email" class="form-control margin-pop"  placeholder="Email" required 
+                name="email" [ngStyle]="{'background' : 'url(./assets/Company_Green.png)'}"
+                [(ngModel)]="email" #emailRef="ngModel" required
+         [ngClass]="(emailRef.invalid && emailRef.touched) ? 'red' : ''">
+         <p *ngIf="(emailRef.invalid && emailRef.touched)">Email is Required</p>
+              </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+          </div>
+
+
+ <!-- <div class="row">
+             <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <div class="form-group">
+                <input type="password" class="form-control margin-pop"  placeholder="password" pattern="[a-z]+[A-Z]+[0-9]+" required 
+                name="email" [ngStyle]="{'background' : 'url(./assets/Company_Green.png)'}"
+                [(ngModel)]="password" #passwordRef="ngModel" required
+         [ngClass]="(passwordRef.invalid && passwordRef.touched) ? 'red' : ''">
+         <p *ngIf="(passowrdRef.invalid && passwordRef.touched)">password is Required</p>
+              </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+          </div>
+ -->
+
+
+          <div class="row">
+             <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <div class="form-group">
+                <input type="text" class="form-control margin-pop"  placeholder="Industry" name="industry" [ngStyle]="{'background' : 'url(./assets/Industry_white.svg)'}"
+                [(ngModel)]="industry" #industryRef="ngModel" required
+         [ngClass]="(industryRef.invalid && industryRef.touched) ? 'red' : ''">
+         <p *ngIf="(industryRef.invalid && industryRef.touched)">Industry is Required</p>
+
+
+              </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+          </div>
+           <div class="row">
+             <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <div class="form-group">
+                <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle com-edit" type="button" data-toggle="dropdown">CompanySize
+       <span class="caret car"></span></button>
+       <ul class="dropdown-menu">
+        <li><a href="#">100</a></li>
+        <li><a href="#">200</a></li>
+        <li><a href="#">300</a></li>
+      </ul>
+    </div>
+              </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+            <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+  <label for="checkbox_id">I have a referral code</label>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+
+          </div>
+           <div class="row">
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+            <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+             <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+  <label for="checkbox_id">I agree to Konnexe <a>Terms of service</a></label>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+
+          </div>
+          <div class="row">
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+            <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8 robot-border">
+              <input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+  <label for="checkbox_id">I am a robot</label>
+  <img  style="width:60px" class="img-responsive image-float" src="./assets/hero-recaptcha-invisible.gif">
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+
+          </div>
+<div class="row">
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+            <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+              <button id="submit" (click)=save() class="btn btn-success but-edit" [disabled]="detailForm.invalid" >Sign up</button>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-12 col-lg-2"></div>
+
+          </div>
+
+
+
+       </form>
+     </div>
+<div class="col-sm-2 col-md-2 col-xs-2 col-lg-2"></div>
+   </div>
+ </div>
+ <button (click)="router.navigate(['/signin'])">next</button>
+
+
+ <footer>
+  <div class="foot-fix">
+    <div class="container con-fix">
+      <div class="row last">
+        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+          <ul>
+            <li>Privacy Police</li>
+            <li>User Agreement</li>
+            <li class="last-check">About</li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+          <footer> &copy; COPYRIGHT KONNEXE.ALL RIGHTS RESERVED</footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
